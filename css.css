@@ -1,0 +1,244 @@
+body {
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121826;
+    flex-direction: column;
+}
+
+.purple-stain-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 800px;
+    background:
+        radial-gradient(circle at top left,
+            rgba(102, 44, 209, 0.5),
+            rgba(255, 0, 0, 0) 31%)
+}
+
+.purple-stain-2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 800px;
+    height: 800px;
+    z-index: 100;
+    background:
+        radial-gradient(circle at bottom right,
+            rgba(102, 44, 209, 0.5),
+            rgba(255, 0, 0, 0) 31%)
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    width: minmax(200px, 450px);
+    height: 390px;
+    background-color: #212936;
+    border-radius: 1rem;
+    border: 1px solid #4D5562;
+}
+
+.form-container>div {
+    padding-left: 40px;
+}
+
+.title {
+    margin-top: 20px;
+    color: #E5E7EB;
+    font-family: Inter;
+}
+
+.name-container {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.email-container {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+label {
+    color: #A1A1A9;
+    font-family: Inter;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+input {
+    width: 80%;
+    min-height: 40px;
+    border: 2px solid #4D5562;
+    border-radius: 15px;
+    background-color: #212936;
+    padding-left: 10px;
+    z-index: 1000;
+    color: #E5E7EB;
+    font-family: Inter;
+}
+
+input::placeholder {
+    margin-left: 10px;
+    color: #A1A1A9;
+}
+
+.submit-container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.submit {
+    width: 130px;
+    height: 40px;
+    background: linear-gradient(0deg, rgba(101, 44, 209, 1) 0%, rgba(132, 94, 238, 1) 87%);
+    border: none;
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 500;
+    color: #E5E7EB;
+    border-radius: 25px;
+    z-index: 10000;
+    transition: background .5s;
+}
+
+.details {
+    display: flex;
+    width: 200px;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.details p {
+    margin-right: 15px;
+    color: #394150;
+    font-family: Inter;
+    font-size: 13px;
+}
+
+.point-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(132, 94, 238, .3);
+    margin-left: 5px;
+    border-radius: 50%;
+}
+
+.point-1 span {
+    width: 10px;
+    height: 10px;
+    background-color: #845EEE;
+    border-radius: 50%;
+    opacity: .8;
+}
+
+.point-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+
+.point-2 span {
+    width: 10px;
+    height: 10px;
+    background-color: #4D5562;
+    border-radius: 50%;
+    articleopacity: .8;
+}
+
+.point-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+
+.point-3 span {
+    width: 10px;
+    height: 10px;
+    background-color: #4D5562;
+    border-radius: 50%;
+    opacity: .8;
+}
+
+.button-container-container {
+    display: flex;
+    width: 80%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.submit:active {
+    background: linear-gradient(180deg, rgba(101, 44, 209, 1) 0%, rgba(132, 94, 238, 1) 87%);
+
+}
+
+.transition1 {
+    animation: 2s cubic-bezier(.53,-0.07,.02,.83) transition1;
+}
+
+@keyframes transition1 {
+    from {
+        transform: 0;
+    }
+
+    to {
+        transform: translateX(-300%);
+    }
+}
+
+.topics {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    width: minmax(200px, 450px);
+    height: 390px;
+    background-color: #212936;
+    border-radius: 1rem;
+    border: 1px solid #4D5562;
+    opacity: transparent;
+    animation: 1.5s cubic-bezier(.53,-0.07,.02,.83) form__2-transition;
+}
+
+@keyframes form__2-transition {
+    from {transform: translateX(300%)};
+
+    to {transform: translateX(0)};
+}
+
+.incorrect {
+    margin: 75px 0 0 10px;
+    position: absolute;
+    color: #ff706b;
+    font-family: Inter;
+    font-size: 13px;
+}
