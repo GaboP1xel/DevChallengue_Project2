@@ -70,7 +70,6 @@ function newForm1() {
 
         for (let i = 0; i < 3; i++) {
             block_container.appendChild(div_info_container[i]);
-            
         }
 
         for (let i = 0; i < 3; i++) {
@@ -82,11 +81,12 @@ function newForm1() {
         block_2.textContent = "User Experience";
         block_3.textContent = "Graphic Design";
         button_2.textContent = "Continuar";
-        
 
-        block_container.addEventListener("click", () => {
-            let block_container_elements = block_container.querySelectorAll(".div-info");
-            block_container_elements.forEach(element => {
+        let block_container_elements = block_container.querySelectorAll(".div-info");
+
+
+        block_container_elements.forEach(element => {
+            element.addEventListener("click", () => {
                 element.classList.add("clicked");
             });
         });
