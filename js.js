@@ -82,13 +82,72 @@ function newForm1() {
         block_3.textContent = "Graphic Design";
         button_2.textContent = "Continuar";
 
-        let block_container_elements = block_container.querySelectorAll(".div-info");
+        let clicked_elements = [];
 
-
-        block_container_elements.forEach(element => {
+        block_container.querySelectorAll(".div-info").forEach(element => {
             element.addEventListener("click", () => {
-                element.classList.add("clicked");
+                if (!element.classList.contains("clicked")) {
+                    element.classList.add("clicked");
+                    clicked_elements.push(element);
+                } else {
+                    element.classList.remove("clicked");
+                    clicked_elements = clicked_elements.filter(el => el !== element);
+                };
             });
+        });
+
+        button_2.addEventListener("click", (event) => {
+            event.preventDefault();
+            let divInfos = document.getElementsByClassName("div-info");
+            let checked = false;
+
+            for (var i = 0; i < divInfos.length; i++) {
+                if (divInfos[i].classList.contains("clicked")) {
+                    checked = true;
+                };
+            };
+
+            if (checked == false) {
+                let existingError = document.querySelector(".error");
+                if (existingError) {
+                    existingError.remove();
+                } let error = document.createElement("div");
+                error.classList.add("topic-error");
+                error.textContent = "Debes seleccionar un tema";
+                form2.appendChild(error);
+            } else {
+                form.classList.add("transition2");
+                let form3 = document.createElement("FORM");
+                form3.classList.add("last-check");
+                setTimeout(() => {
+                    form2.insertAdjacentElement("afterend", form3);
+                    form2.remove()
+
+                    form3.insertAdjacentHTML("beforeend",`
+                        <h1>Summary</h1>
+                        <div>
+                            <span>Name:</span>
+                            <span>${nombre.value}</span>
+                        </div>
+                        <div>
+                            <span>Email:</span>
+                            <span>${email.value}</span>
+                        </div>
+
+                        <span>Topics:</span>
+                        <ul id="list">
+                        </ul>
+
+                        <button type="submit" class="submit_3">Confirmar</button>
+                    `);
+                    let list = document.getElementById("list");
+                    for (let i = 0; i < clicked_elements.length; i++) {
+                       list.insertAdjacentHTML("beforeend", `
+                       <li>${clicked_elements[i].textContent}</li>
+                       `);
+                    };
+                }, 750);
+            }
         });
     }, 750);
 }

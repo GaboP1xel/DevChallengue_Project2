@@ -118,6 +118,10 @@ input::placeholder {
     transition: background .5s;
 }
 
+.submit:hover {
+    cursor: pointer;
+}
+
 .details {
     display: flex;
     width: 200px;
@@ -282,6 +286,7 @@ input::placeholder {
     color: #A1A1A9;
     font-family: Inter;
     font-size: 14px;
+    user-select: none;
 }
 
 .clicked {
@@ -307,4 +312,38 @@ input::placeholder {
     z-index: 10000;
     transition: background .5s;
     margin-top: 10px;
+    cursor: pointer;
+}
+
+.topic-error {
+    font-family: Inter;
+    font-size: 13px;
+    margin: 10px;
+    color: #ff706b;
+}
+
+.last-check {
+    display: flex;
+    width: 450px;
+    width: minmax(200px, 450px);
+    height: 390px;
+    background-color: #212936;
+    border-radius: 1rem;
+    border: 1px solid #4D5562;
+}
+
+.submit_3 {
+    width: 130px;
+    height: 40px;
+    background: linear-gradient(0deg, rgba(101, 44, 209, 1) 0%, rgba(132, 94, 238, 1) 87%);
+    border: none;
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 500;
+    color: #E5E7EB;
+    border-radius: 25px;
+    z-index: 10000;
+    transition: background .5s;
+    margin-top: 10px;
+    cursor: pointer;
 }
