@@ -491,7 +491,6 @@ input::placeholder {
 @media screen and (max-width: 460px) {
     .form-container {
         width: 80%;
-        height: 70%;
         align-items: center;
     }
 
